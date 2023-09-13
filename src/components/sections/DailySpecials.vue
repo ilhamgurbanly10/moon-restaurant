@@ -86,7 +86,7 @@
 
                         <p v-text="data.data?.body?.description" class="mt-3 lg:w-10/12"></p>
 
-                        <router-link to="/view-our-menu" class="mt-10 inline-block">
+                        <router-link to="/view-our-events" class="mt-10 inline-block">
                             <button class="white-btn mt-7"><span>VIEW OUR EVENTS</span></button>
                         </router-link>
 
