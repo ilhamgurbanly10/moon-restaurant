@@ -1,0 +1,55 @@
+
+
+.top {
+
+    min-height: 900px;
+    @media (min-width: 1024px) { min-height: 700px; }
+
+    .box {
+        background-color: #252121D9 !important;
+    }
+
+    .topTitle {
+        line-height: 40px;
+        top: -30px;
+    }
+
+}
+
+.body {
+
+    .bodyLeft {
+        min-height: 400px;
+        @media (min-width: 1024px) { min-height: 700px; }
+    }
+
+    .bodyRight {
+        min-height: 400px;
+        @media (min-width: 1024px) { min-height: 700px; }
+    }
+
+    .bodyTitle {
+        font-size: 20px;
+        @media (min-width: 1024px) { font-size: 70px; }
+    }
+
+}
+
+.bottom {
+    
+    .bottomLeft {
+        min-height: 400px;
+        @media (min-width: 1024px) { min-height: 700px; }
+    }
+
+    .bottomRight {
+        min-height: 400px;
+        @media (min-width: 1024px) { min-height: 700px; }
+    }
+
+    .bottomTitle {
+        font-size: 20px;
+        @media (min-width: 1024px) { font-size: 70px; }
+    }
+
+}

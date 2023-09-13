@@ -2,30 +2,18 @@
 
 import IsLoading from '@/components/loaders/IsLoading.vue';
 
-import { defineAsyncComponent, onMounted } from 'vue';
+import { defineAsyncComponent } from 'vue';
 
-const HeroSection = defineAsyncComponent(() =>
-  import('@/components/sections/HeroSection.vue')
+const AboutUs = defineAsyncComponent(() =>
+  import('@/components/sections/AboutUs.vue')
 );
 
-const OurStory = defineAsyncComponent(() =>
-  import('@/components/sections/OurStory.vue')
+const DailySpecials = defineAsyncComponent(() =>
+  import('@/components/sections/DailySpecials.vue')
 );
 
-const ViewOurMenu = defineAsyncComponent(() =>
-  import('@/components/sections/ViewOurMenu.vue')
-);
-
-const CommentsSection = defineAsyncComponent(() =>
-  import('@/components/sections/CommentsSection.vue')
-);
-
-const SelectionsSection = defineAsyncComponent(() =>
-  import('@/components/sections/SelectionsSection.vue')
-);
-
-const SpecialRecipes = defineAsyncComponent(() =>
-  import('@/components/sections/SpecialRecipes.vue')
+const VisitOurRestaurant = defineAsyncComponent(() =>
+  import('@/components/sections/VisitOurRestaurant.vue')
 );
 
 </script>
@@ -35,7 +23,7 @@ const SpecialRecipes = defineAsyncComponent(() =>
   <Suspense>
 
     <template #default>
-      <HeroSection />
+      <AboutUs />
     </template>
 
     <template #fallback>
@@ -47,7 +35,7 @@ const SpecialRecipes = defineAsyncComponent(() =>
   <Suspense>
 
     <template #default>
-      <OurStory />
+      <DailySpecials />
     </template>
 
     <template #fallback>
@@ -59,43 +47,7 @@ const SpecialRecipes = defineAsyncComponent(() =>
   <Suspense>
 
     <template #default>
-      <ViewOurMenu />
-    </template>
-
-    <template #fallback>
-      <IsLoading />
-    </template>
-
-  </Suspense>
-
-  <Suspense>
-
-    <template #default>
-      <CommentsSection />
-    </template>
-
-    <template #fallback>
-      <IsLoading />
-    </template>
-
-  </Suspense>
-
-  <Suspense>
-
-    <template #default>
-      <SelectionsSection />
-    </template>
-
-    <template #fallback>
-      <IsLoading />
-    </template>
-
-  </Suspense>
-
-  <Suspense>
-
-    <template #default>
-      <SpecialRecipes />
+      <VisitOurRestaurant />
     </template>
 
     <template #fallback>

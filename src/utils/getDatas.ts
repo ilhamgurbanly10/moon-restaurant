@@ -1,207 +1,35 @@
 import api from './api'
-import type { OurStoryObj, ViewOurMenuObj, CommentsObj, SelectionsObj, SpecialRecipesObj, HeroObj } from '@/../interfaces/Common';
+import type { AboutUsObj, DailySpecialsObj, VisitObj } from '@/../interfaces/Common';
 
-export const getOurStory = async (): Promise<OurStoryObj> => {
+export const getAboutUs = async (): Promise<AboutUsObj> => {
   try {
 
-    let data: OurStoryObj = { data: null, error: false };
+    const data: AboutUsObj = { data: null, error: false };
     const res = await api.get('todos/');
     data.data = {
-        title: 'BİZİM HEKAYƏ',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sedolorm reminusto doeiusmod tempor incidition ulla mco laboris nisi ut aliquip ex ea commo condorico consectetur adipiscing elitut aliquip.',
-        subtitle: 'DADLI VƏ LƏZZƏTLİ',
-        first_image: 'https://savory.qodeinteractive.com/wp-content/uploads/2016/09/home1-main-image-1.jpg',
-        second_image: 'https://savory.qodeinteractive.com/wp-content/uploads/2016/09/home1-main-image-2.jpg'
-    }
-    return data;
-    
-  } catch (error) {
-    console.error('Error fetching:', error);
-    return { data: null, error: true };
-  }
-};
-
-export const getViewOurMenu = async (): Promise<ViewOurMenuObj> => {
-  try {
-
-    let data: ViewOurMenuObj = { data: null, error: false };
-    const res = await api.get('todos/');
-    data.data = {
-        title: 'İNQREDİENTLƏR',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sedolorm reminusto doeiusmod tempor incidition ulla mco laboris nisi ut aliquip ex ea commo condorico consectetur adipiscing elitut aliquip.',
-        subtitle: 'DADLI VƏ LƏZZƏTLİ',
-        img: 'https://savory.qodeinteractive.com/wp-content/uploads/2016/09/home1-main-image-4.jpg',
-    }
-    return data;
-    
-  } catch (error) {
-    console.error('Error fetching:', error);
-    return { data: null, error: true };
-  }
-};
-
-export const getComments = async (): Promise<CommentsObj> => {
-  try {
-
-    let data: CommentsObj = { data: null, error: false };
-    const res = await api.get('todos/');
-    data.data = {
-        comments: [
-          {
-            img: 'https://savory.qodeinteractive.com/wp-content/uploads/2016/04/testimonial2.png',
-            comment: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sedolorm reminusto doeiusmod tempor incidition ulla mco laboris nisi ut aliquip ex ea commo condorico consectetur adipiscing elitut aliquip.',
-            name: 'AYSU GURBANLY'
-          },
-          {
-            img: 'https://savory.qodeinteractive.com/wp-content/uploads/2016/04/testimonial2.png',
-            comment: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sedolorm reminusto doeiusmod tempor incidition ulla mco laboris nisi ut aliquip ex ea commo condorico consectetur adipiscing elitut aliquip.',
-            name: 'AYSU GURBANLY'
-          },
-          {
-            img: 'https://savory.qodeinteractive.com/wp-content/uploads/2016/04/testimonial2.png',
-            comment: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sedolorm reminusto doeiusmod tempor incidition ulla mco laboris nisi ut aliquip ex ea commo condorico consectetur adipiscing elitut aliquip.',
-            name: 'AYSU GURBANLY'
-          },
-          {
-            img: 'https://savory.qodeinteractive.com/wp-content/uploads/2016/04/testimonial2.png',
-            comment: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sedolorm reminusto doeiusmod tempor incidition ulla mco laboris nisi ut aliquip ex ea commo condorico consectetur adipiscing elitut aliquip.',
-            name: 'AYSU GURBANLY'
-          },
-        ],
-        bg_img: 'https://savory.qodeinteractive.com/wp-content/uploads/2016/09/home1-main-parallax-1.jpg',
-    }
-    return data;
-    
-  } catch (error) {
-    console.error('Error fetching:', error);
-    return { data: null, error: true };
-  }
-};
-
-export const getSelections = async (): Promise<SelectionsObj> => {
-  try {
-
-    let data: SelectionsObj = { data: null, error: false };
-    const res = await api.get('todos/');
-    data.data = {
-       data: [
-        {
-          id: 1,
-          img: 'https://savory.qodeinteractive.com/wp-content/uploads/2016/09/home1-main-tab-image1.jpg',
-          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sedolorm reminusto doeiusmod tempor incidition ulla mco laboris nisi ut aliquip ex ea commo condorico consectetur adipiscing elitut aliquip.',
-          title: 'CHEESE CROISSANTS',
-          key: 'CHEESE-CROISSANTS'
-        },
-        {
-          id: 2,
-          img: 'https://savory.qodeinteractive.com/wp-content/uploads/2016/09/home1-main-tab-image4.jpg',
-          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sedolorm reminusto doeiusmod tempor incidition ulla mco laboris nisi ut aliquip ex ea commo condorico consectetur adipiscing elitut aliquip.',
-          title: 'BRUSCHETTI',
-          key: 'BRUSCHETTI'
-        },
-        {
-          id: 3,
-          img: 'https://savory.qodeinteractive.com/wp-content/uploads/2016/09/home1-main-tab-image1.jpg',
-          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sedolorm reminusto doeiusmod tempor incidition ulla mco laboris nisi ut aliquip ex ea commo condorico consectetur adipiscing elitut aliquip.',
-          title: 'AWESOME VEGETABLES',
-          key: 'AWESOME-VEGETABLES'
-        },
-        {
-          id: 4,
-          img: 'https://savory.qodeinteractive.com/wp-content/uploads/2016/09/home1-main-tab-image4.jpg',
-          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sedolorm reminusto doeiusmod tempor incidition ulla mco laboris nisi ut aliquip ex ea commo condorico consectetur adipiscing elitut aliquip.',
-          title: 'TASTY SNACKS',
-          key: 'TASTY-SNACKS'
-        },
-        {
-          id: 5,
-          img: 'https://savory.qodeinteractive.com/wp-content/uploads/2016/09/home1-main-tab-image1.jpg',
-          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sedolorm reminusto doeiusmod tempor incidition ulla mco laboris nisi ut aliquip ex ea commo condorico consectetur adipiscing elitut aliquip.',
-          title: 'ALL-TIME BEST RECIPES',
-          key: 'ALL-TIME-BEST-RECIPES'
-        },
-        {
-          id: 6,
-          img: 'https://savory.qodeinteractive.com/wp-content/uploads/2016/09/home1-main-tab-image4.jpg',
-          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sedolorm reminusto doeiusmod tempor incidition ulla mco laboris nisi ut aliquip ex ea commo condorico consectetur adipiscing elitut aliquip.',
-          title: 'MEAL FOR WHOLE FAMILY',
-          key: 'MEAL-FOR-WHOLE-FAMILY'
-        }
-       ],
-       buttons: [
-        {
-          id: 1,
-          value: 'CHEESE-CROISSANTS',
-          label: 'CHEESE CROISSANTS'
-        },
-        {
-          id: 2,
-          value: 'BRUSCHETTI',
-          label: 'BRUSCHETTI'
-        },
-        {
-          id: 3,
-          value: 'AWESOME-VEGETABLES',
-          label: 'AWESOME VEGETABLES'
-        },
-        {
-          id: 4,
-          value: 'TASTY-SNACKS',
-          label: 'TASTY SNACKS'
-        },
-        {
-          id: 5,
-          value: 'ALL-TIME-BEST-RECIPES',
-          label: 'ALL-TIME BEST RECIPES'
-        },
-        {
-          id: 6,
-          value: 'MEAL-FOR-WHOLE-FAMILY',
-          label: 'MEAL FOR WHOLE FAMILY'
-        }
-       ]
-    }
-    return data;
-    
-  } catch (error) {
-    console.error('Error fetching:', error);
-    return { data: null, error: true };
-  }
-};
-
-export const getSpecialRecipes = async (): Promise<SpecialRecipesObj> => {
-  try {
-
-    let data: SpecialRecipesObj = { data: null, error: false };
-    const res = await api.get('todos/');
-    data.data = {
-        title: 'XÜSUSİ RESEPTLƏR',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sedolorm reminusto doeiusmod tempor incidition ulla mco laboris nisi ut aliquip ex ea commo condorico consectetur adipiscing elitut aliquip.',
-        subtitle: 'DADLI VƏ LƏZZƏTLİ',
+        title: 'A place where food, design, and ambiance come together to create a memorable experience.',
+        icon: 'https://grandrestaurantv6-7.b-cdn.net/wp-content/uploads/2022/09/knife-icon.png',
         data: [
           {
-            title: 'XÜSUSİ RESEPTLƏR',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sedolorm reminusto doeiusmod tempor incidition ulla mco laboris nisi ut aliquip ex ea commo condorico consectetur adipiscing elitut aliquip.',
-            date: '11 APREL, 2016 SAĞLAM',
-            img: 'https://savory.qodeinteractive.com/wp-content/uploads/2016/04/blog-post1.jpg',
-            comment_count: 10,
-            slug: 'special-recipe'
+            id: 1,
+            slug: 'beverage-menu',
+            title: 'Beverage Menu',
+            description: 'Our pizza is lovingly handcrafted, stone-baked, and delicious.',
+            img: 'https://grandrestaurantv6-7.b-cdn.net/wp-content/uploads/2022/09/cold-espresso-coffee-glass-2022-03-04-06-19-34-utc-714x1024.jpg'
           },
           {
-            title: 'XÜSUSİ RESEPTLƏR',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sedolorm reminusto doeiusmod tempor incidition ulla mco laboris nisi ut aliquip ex ea commo condorico consectetur adipiscing elitut aliquip.',
-            date: '15 APREL, 2016 SAĞLAM',
-            img: 'https://savory.qodeinteractive.com/wp-content/uploads/2016/04/blog-post2.jpg',
-            comment_count: 5,
-            slug: 'special-recipe'
+            id: 2,
+            slug: 'dining-menu',
+            title: 'Dining Menu',
+            description: 'Our pizza is lovingly handcrafted, stone-baked, and delicious.',
+            img: 'https://grandrestaurantv6-7.b-cdn.net/wp-content/uploads/2022/09/dinning-fish-dish-683x1024.jpg'
           },
           {
-            title: 'XÜSUSİ RESEPTLƏR',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sedolorm reminusto doeiusmod tempor incidition ulla mco laboris nisi ut aliquip ex ea commo condorico consectetur adipiscing elitut aliquip.',
-            date: '20 APREL, 2016 SAĞLAM',
-            img: 'https://savory.qodeinteractive.com/wp-content/uploads/2016/04/blog-post3.jpg',
-            comment_count: 20,
-            slug: 'special-recipe'
+            id: 3,
+            slug: 'dessert-menu',
+            title: 'Dessert Menu',
+            description: 'Our pizza is lovingly handcrafted, stone-baked, and delicious.',
+            img: 'https://grandrestaurantv6-7.b-cdn.net/wp-content/uploads/2022/09/desert-cake-683x1024.jpg'
           }
         ]
     }
@@ -213,39 +41,79 @@ export const getSpecialRecipes = async (): Promise<SpecialRecipesObj> => {
   }
 };
 
-export const getHero = async (): Promise<HeroObj> => {
+export const getDailySpecials = async (): Promise<DailySpecialsObj> => {
   try {
 
-    let data: HeroObj = { data: [], error: false };
+    const data: DailySpecialsObj = { data: null, error: false };
     const res = await api.get('todos/');
-    data.data = [
-      {
-        title: 'MENYULARIMIZ',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sedolorm reminusto doeiusmod tempor incidition ulla mco laboris nisi ut aliquip ex ea commo condorico consectetur adipiscing elitut aliquip.',
-        subtitle: 'DADLI VƏ LƏZZƏTLİ',
-        img: '//savory.qodeinteractive.com/wp-content/uploads/2016/10/main-home-slide2n.jpg',
-        slug: 'menu-1'
-      },
-      {
-        title: 'RESTORAN',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sedolorm reminusto doeiusmod tempor incidition ulla mco laboris nisi ut aliquip ex ea commo condorico consectetur adipiscing elitut aliquip.',
-        subtitle: 'DADLI VƏ LƏZZƏTLİ',
-        img: '//savory.qodeinteractive.com/wp-content/uploads/2016/10/main-home-slide1.jpg',
-        slug: 'menu-1'
-      },
-      {
-        title: 'LƏZZİZ MƏTBƏXİMİZ',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sedolorm reminusto doeiusmod tempor incidition ulla mco laboris nisi ut aliquip ex ea commo condorico consectetur adipiscing elitut aliquip.',
-        subtitle: 'DADLI VƏ LƏZZƏTLİ',
-        img: '//savory.qodeinteractive.com/wp-content/uploads/2016/10/main-home-slide3.jpg',
-        slug: 'menu-1'
-      }
-    ]
+
+    data.data = {
+        top: {
+          title: 'Daily Specials',
+          bg_img: 'https://grandrestaurantv6-7.b-cdn.net/wp-content/uploads/2022/09/rod-long-kImU-9S9uh8-unsplash.jpg',
+          data: [
+            { 
+              id: 1,
+              title: 'BBQ Ribs',
+              price: '$26.0',
+              description: '1/2 rack of house smoked ribs brushed with zesty BBQ sauce. Served with kaleslaw, french fries, & corn bread muffin served with a side of honey cinnamon butter'
+            },
+            {
+              id: 2,
+              title: 'Grilled Salmon',
+              price: '$21.0',
+              description: 'Eco-friendlygrilledNorwegiansalmon,wildrice, roasted butternut squash & brussel sprouts. Topped with garlic-rosemary lemon butter'
+            },
+            { 
+              id: 3,
+              title: 'BBQ Ribs',
+              price: '$22.0',
+              description: '1/2 rack of house smoked ribs brushed with zesty BBQ sauce. Served with kaleslaw, french fries, & corn bread muffin served with a side of honey cinnamon butter'
+            },
+            {
+              id: 4,
+              title: 'Grilled Salmon',
+              price: '$19.0',
+              description: 'Eco-friendlygrilledNorwegiansalmon,wildrice, roasted butternut squash & brussel sprouts. Topped with garlic-rosemary lemon butter'
+            }
+          ]
+        },
+        body: {
+          title: 'Events & Functions',
+          description: 'Lorem ipsum dolor sit enim ametys consec atetur adipisicing elit  eiusmo tempors incididunts labore dolore magna aliqua enim mini veniam quis nostrud exercitation ullamcos laboris nisiut aliquip consequat reprehenderit.',
+          bg_img: 'https://grandrestaurantv6-7.b-cdn.net/wp-content/uploads/2022/09/avocado-toast-with-egg-and-pomegrate-seeds-on-blac-2021-10-15-11-33-16-utc.jpg'
+        },
+        bottom: {
+          title: 'Daily Special Dishes',
+          description: 'Lorem ipsum dolor sit enim ametys consec atetur adipisicing elit  eiusmo tempors incididunts labore dolore magna aliqua enim mini veniam quis nostrud exercitation ullamcos laboris nisiut aliquip consequat reprehenderit.Spend more time enjoying yourself and less time stressing about the details with catering from Grand Restaurant. We’ll craft a meal your guests are sure to savor, and we’ll even take care of the dishes.',
+          bg_img: 'https://grandrestaurantv6-7.b-cdn.net/wp-content/uploads/2022/09/avocado-toast-with-egg-and-pomegrate-seeds-on-blac-2021-10-15-11-33-16-utc-1.jpg'
+        }
+    }
     return data;
     
   } catch (error) {
     console.error('Error fetching:', error);
-    return { data: [], error: true };
+    return { data: null, error: true };
+  }
+};
+
+export const getVisit = async (): Promise<VisitObj> => {
+  try {
+
+    const data: VisitObj = { data: null, error: false };
+    const res = await api.get('todos/');
+    data.data = {
+        title: 'Visit Our Restaurant',
+        bg_img: 'https://grandrestaurantv6-7.b-cdn.net/wp-content/uploads/2022/09/business-lunch-man-and-woman-sitting-at-table-at-2021-12-09-04-16-54-utc-1024x683.jpg',
+        dinner_txt: ['Thursday to Sunday', 'Reservations from 12pm to 1.30pm'],
+        lunch_txt: ['Saturday and Sunday', 'Reservations from 12pm to 1.30pm']
+        
+    }
+    return data;
+    
+  } catch (error) {
+    console.error('Error fetching:', error);
+    return { data: null, error: true };
   }
 };
 

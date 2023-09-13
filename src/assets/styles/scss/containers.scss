@@ -1,15 +1,19 @@
 // main-container
-.main-container,
-.main-container-2 {
+.main-container {
     width: 100%;
     padding-left: 1.2rem;
     padding-right: 1.2rem;
 }
 
+.main-container-2 {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+}
+
 @media (min-width: 640px) {
 
-    .main-container,
-    .main-container-2 {
+    .main-container {
         padding-left: 1.6rem;
         padding-right: 1.6rem;
     }
@@ -30,8 +34,6 @@
         max-width: $mainContainer;
         margin-left: auto;
         margin-right: auto;
-        padding-left: 2.5rem;
-        padding-right: 2.5rem;
     }
 
 }

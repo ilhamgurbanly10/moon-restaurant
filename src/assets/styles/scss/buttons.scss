@@ -2,12 +2,13 @@
 .white-btn {
 
     background-color: $white;
-    color: $black;
-    transition: color .3s;
+    color: $brown;
+    transition: all .3s;
     padding: 1rem 2rem;
     font-size: 13px;
     letter-spacing: 2px;
     position: relative;
+    border: 1px solid $brown;
 
     span {
         position: relative;
@@ -20,7 +21,7 @@
         height: 100%;
         left: 0;
         top: 0;
-        background-color: $black;
+        background-color: $brown;
         transition: width .3s;
         position: absolute;
         z-index: 1;
@@ -30,6 +31,8 @@
     &:is(:active,:hover) {
 
         color: $white !important;
+        transform: scale(.9);
+        -webkit-transform: scale(.9);
 
         &::before {
             width: 100%;

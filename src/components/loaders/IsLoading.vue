@@ -11,5 +11,3 @@
         <loading-outlined class="font-15" />
     </div>
 </template>
-
-<style src="@/assets/styles/components/Loader.scss" lang="scss" scoped />

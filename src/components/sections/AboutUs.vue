@@ -5,20 +5,21 @@
     import { useStore } from 'vuex';
     import IsLoading from '@/components/loaders/IsLoading.vue';
     import ErrorOcurred from '@/components/errors/ErrorOcurred.vue';
-    import type {OurStoryObj} from '@/../../interfaces/Common';
+    import AboutCard from '@/components/cards/AboutCard.vue';
+    import type {AboutUsObj} from '@/../../interfaces/Common';
 
     // vuex
     const store = useStore();
 
     const loading = ref<boolean>(false);
 
-    const data = computed<OurStoryObj>(() => {
-        return store.getters.ourStory;
+    const data = computed<AboutUsObj>(() => {
+        return store.getters.aboutUs;
     });
 
     const getData = async (): Promise<void> => {
         loading.value = true;
-        await store.dispatch('getOurStory');
+        await store.dispatch('getAboutUs');
         loading.value = false;
     }
 
@@ -31,8 +32,6 @@
 
 <template>
 
-
-
     <section class="main-container page-top-spacing">
 
         <Transition name="to-top">
@@ -43,17 +42,18 @@
 
             <div v-else-if="!loading && !data.error">
 
-                <h3 class="text-center">{{ data.data?.subtitle }}</h3>
+                <div class="flex flex-col items-center">
 
-                <h1 class="text-center mt-5 font-bold font-16 font-lg-18">{{ data.data?.title }}</h1>
+                    <img width="48" height="48" :src="data.data?.icon" :alt="data.data?.title">
 
-                <p class="text-center mt-5 lg:w-6/12 lg:mx-auto">{{ data.data?.description }}</p>
+                    <h1 class="font-15 font-lg-18 text-center mt-8 lg:w-9/12" v-text="data.data?.title"></h1>
 
-                <div class="flex flex-col lg:flex-row justify-between mt-7 pt-5">
-                    <img :src="data.data?.first_image" :alt="data.data?.title" class="full-width lg:w-6/12 lg:pr-4">
-                    <img :src="data.data?.second_image" :alt="data.data?.title" class="full-width lg:w-6/12 mt-5 lg:mt-0 lg:pl-4">
+                    <div class="w-full flex flex-col lg:flex-row justify-between mt-10">
+                        <AboutCard v-for="(item, i) in data.data?.data" :key="i" :item="item" :class="{'mt-5 lg:mt-0': i != 0}" />
+                    </div>
+
                 </div>
-
+                
             </div>
         
         </Transition>
@@ -62,4 +62,4 @@
 
 </template>
 
-<style src="@/assets/styles/components/OurStory.scss" lang="scss" scoped />
+<style src="@/assets/styles/components/AboutUs.scss" lang="scss" scoped />

@@ -1,88 +1,52 @@
 
-import type { OurStoryObj, ViewOurMenuObj, CommentsObj, SelectionsObj, SpecialRecipesObj, HeroObj } from '@/../interfaces/Common';
-import { getOurStory, getViewOurMenu, getComments, getSelections, getSpecialRecipes, getHero } from '@/utils/getDatas';
+import type { AboutUsObj, DailySpecialsObj, VisitObj } from '@/../interfaces/Common';
+import { getAboutUs, getDailySpecials, getVisit } from '@/utils/getDatas';
 
 export default {
-  state(): {ourStory: OurStoryObj, viewOurMenu: ViewOurMenuObj, comments: CommentsObj, selections: SelectionsObj, specialRecipes: SpecialRecipesObj, hero: HeroObj } {
+  state(): {aboutUs: AboutUsObj, dailySpecials: DailySpecialsObj, visit: VisitObj} {
     return {
-      ourStory: { data: null, error: false },
-      viewOurMenu: { data: null, error: false },
-      comments: { data: null, error: false },
-      selections: { data: null, error: false },
-      specialRecipes: { data: null, error: false },
-      hero: { data: [], error: false },
+      aboutUs: { data: null, error: false },
+      dailySpecials: { data: null, error: false },
+      visit: { data: null, error: false }
     }
   },
   mutations: {
-    setOurStory(state: {ourStory: OurStoryObj}, payload: OurStoryObj) {
-      state.ourStory = payload;
+    setAboutUs(state: {aboutUs: AboutUsObj}, payload: AboutUsObj) {
+      state.aboutUs = payload;
     },
-    setViewOurMenu(state: {viewOurMenu: ViewOurMenuObj}, payload: ViewOurMenuObj) {
-      state.viewOurMenu = payload;
+    setDailySpecials(state: {dailySpecials: DailySpecialsObj}, payload: DailySpecialsObj) {
+      state.dailySpecials = payload;
     },
-    setComments(state: {comments: CommentsObj}, payload: CommentsObj) {
-      state.comments = payload;
-    },
-    setSelections(state: {selections: SelectionsObj}, payload: SelectionsObj) {
-      state.selections = payload;
-    },
-    setSpecialRecipes(state: {specialRecipes: SpecialRecipesObj}, payload: SpecialRecipesObj) {
-      state.specialRecipes = payload;
-    },
-    setHero(state: {hero: HeroObj}, payload: HeroObj) {
-      state.hero = payload;
+    setVisit(state: {visit: VisitObj}, payload: VisitObj) {
+      state.visit = payload;
     }
   },
   getters: {
-    ourStory(state: {ourStory: OurStoryObj}) {
-      return state.ourStory;
+    aboutUs(state: {aboutUs: AboutUsObj}) {
+      return state.aboutUs;
     },
-    viewOurMenu(state: {viewOurMenu: ViewOurMenuObj}) {
-      return state.viewOurMenu;
+    dailySpecials(state: {dailySpecials: DailySpecialsObj}) {
+      return state.dailySpecials;
     },
-    comments(state: {comments: CommentsObj}) {
-      return state.comments;
-    },
-    selections(state: {selections: SelectionsObj}) {
-      return state.selections;
-    },
-    specialRecipes(state: {specialRecipes: SpecialRecipesObj}) {
-      return state.specialRecipes;
-    },
-    hero(state: {hero: HeroObj}) {
-      return state.hero;
+    visit(state: {visit: VisitObj}) {
+      return state.visit;
     }
   },
   actions: {
-    async getOurStory(context: { commit: Function }, payload: OurStoryObj) {
-      let data: OurStoryObj = {data: null, error: false};
-      data = await getOurStory();
-      context.commit('setOurStory', data);
+    async getAboutUs(context: { commit: Function }, payload: AboutUsObj) {
+      let data: AboutUsObj = {data: null, error: false};
+      data = await getAboutUs();
+      context.commit('setAboutUs', data);
     },
-    async getViewOurMenu(context: { commit: Function }, payload: ViewOurMenuObj) {
-      let data: ViewOurMenuObj = {data: null, error: false};
-      data = await getViewOurMenu();
-      context.commit('setViewOurMenu', data);
+    async getDailySpecials(context: { commit: Function }, payload: DailySpecialsObj) {
+      let data: DailySpecialsObj = {data: null, error: false};
+      data = await getDailySpecials();
+      context.commit('setDailySpecials', data);
     },
-    async getComments(context: { commit: Function }, payload: CommentsObj) {
-      let data: CommentsObj = {data: null, error: false};
-      data = await getComments();
-      context.commit('setComments', data);
-    },
-    async getSelections(context: { commit: Function }, payload: SelectionsObj) {
-      let data: SelectionsObj = {data: null, error: false};
-      data = await getSelections();
-      context.commit('setSelections', data);
-    },
-    async getSpecialRecipes(context: { commit: Function }, payload: SpecialRecipesObj) {
-      let data: SpecialRecipesObj = {data: null, error: false};
-      data = await getSpecialRecipes();
-      context.commit('setSpecialRecipes', data);
-    },
-    async getHero(context: { commit: Function }, payload: HeroObj) {
-      let data: HeroObj = {data: [], error: false};
-      data = await getHero();
-      context.commit('setHero', data);
+    async getVisit(context: { commit: Function }, payload: VisitObj) {
+      let data: VisitObj = {data: null, error: false};
+      data = await getVisit();
+      context.commit('setVisit', data);
     }
   }
 }

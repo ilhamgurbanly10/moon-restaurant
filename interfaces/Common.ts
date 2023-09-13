@@ -1,105 +1,71 @@
 // OurStory
-export interface OurStory {
+export interface AboutUsPost {
+    id: number;
     title: string;
-    description: string;
-    subtitle: string;
-    first_image: string;
-    second_image: string;
-}
-
-export interface OurStoryObj {
-    data: OurStory | null;
-    error: boolean;
-}
-
-// hero
-export interface Hero {
-    title: string;
-    description: string;
-    subtitle: string;
     img: string;
+    description: string;
     slug: string;
 }
 
-export interface HeroObj {
-    data: Hero[];
-    error: boolean;
-}
-
-// view-our-menu
-export interface ViewOurMenu {
+export interface AboutUs {
     title: string;
-    description: string;
-    subtitle: string;
-    img: string;
+    icon: string;
+    data: AboutUsPost[];
 }
 
-export interface ViewOurMenuObj {
-    data: ViewOurMenu | null;
+export interface AboutUsObj {
+    data: AboutUs | null;
     error: boolean;
 }
 
-// comments
-export interface Comment {
-    img: string;
-    comment: string;
-    name: string;
+// daily-specials
+export interface DailySpecialsTopData {
+    title: string;
+    id: number;
+    price: string;
+    description: string; 
 }
 
-export interface Comments {
-    comments: Comment[];
+export interface DailySpecialsTop {
+    title: string;
     bg_img: string;
+    data: DailySpecialsTopData[];
 }
 
-export interface CommentsObj {
-    data: Comments | null;
-    error: boolean;
-}
-
-// selections
-export interface SelectionsData {
-    id: number;
-    img: string;
-    text: string;
+export interface DailySpecialsBody {
     title: string;
-    key: string;
-}
-
-export interface SelectionsButtons {
-    id: number;
-    value: string;
-    label: string;
-}
-
-export interface Selections {
-    data: SelectionsData[];
-    buttons: SelectionsButtons[];
-}
-
-export interface SelectionsObj {
-    data: Selections | null;
-    error: boolean;
-}
-
-// special-recipes
-export interface SpecialRecipe {
-    title: string;
+    bg_img: string;
     description: string;
-    date: string;
-    img: string;
-    slug: string;
-    comment_count: number;
 }
 
-export interface SpecialRecipes {
+export interface DailySpecialsBottom {
     title: string;
+    bg_img: string;
     description: string;
-    subtitle: string;
-    data: SpecialRecipe[];
 }
 
-export interface SpecialRecipesObj {
-    data: SpecialRecipes | null;
+export interface DailySpecials {
+    top: DailySpecialsTop;
+    body: DailySpecialsBody;
+    bottom: DailySpecialsBottom;
+}
+
+export interface DailySpecialsObj {
+    data: DailySpecials | null;
     error: boolean;
 }
+
+// visit
+export interface Visit {
+    title: string;
+    bg_img: string;
+    lunch_txt: string[];
+    dinner_txt: string[];
+}
+
+export interface VisitObj {
+    data: Visit | null;
+    error: boolean;
+}
+
 
