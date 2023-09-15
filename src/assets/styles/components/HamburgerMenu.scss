@@ -1,0 +1,37 @@
+@import '../scss/colors.scss';
+@import '../scss/variables.scss';
+
+.overlay {
+
+    top: 0;
+    transform: translateX(100vw);
+    transition: all .5s 0s;
+    background-color: rgba(0, 0, 0, .7);
+
+    &.show {
+        transition: all .5s .3s;
+        transform: translateX(0vw);
+    }
+
+}
+
+.menu {
+
+    top: 0;
+    transform: translateX(100vw);
+    transition: all .5s .3s;
+    background-color: $black;
+    width: 75vw;
+
+    &.show {
+        transition: all .5s 0s;
+        transform: translateX(25vw);
+    }
+
+    .link {
+        color: $white;
+        font-size: 20px;
+        width: 100%;
+    }  
+
+}

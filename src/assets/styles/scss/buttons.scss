@@ -41,11 +41,56 @@
     }
 }
 
+// white-btn-2
+.white-btn-2 {
+
+    background-color: transparent;
+    color: $white;
+    transition: all .3s;
+    padding: 1rem 2rem;
+    font-size: 13px;
+    letter-spacing: 2px;
+    position: relative;
+    border: 1px solid $white;
+
+    span {
+        position: relative;
+        z-index: 10;
+    }
+
+    &::before {
+        content: '';
+        width: 0;
+        height: 100%;
+        left: 0;
+        top: 0;
+        background-color: $brown;
+        transition: width .3s;
+        position: absolute;
+        z-index: 1;
+        
+    }
+
+    &:is(:active,:hover) {
+
+        color: $white !important;
+        border-color: $brown;
+        transform: scale(.95);
+        -webkit-transform: scale(.95);
+
+        &::before {
+            width: 100%;
+        }
+
+    }
+}
+
 // white-iconic-btn
 .white-iconic-btn {
 
     color: $white;
     opacity: 1;
+    font-size: 20px;
     transition: opacity .3s;
 
     &:is(:hover, :active) {

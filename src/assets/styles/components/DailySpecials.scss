@@ -1,4 +1,4 @@
-
+@import '../scss/colors.scss';
 
 .top {
 
@@ -12,6 +12,26 @@
     .topTitle {
         line-height: 40px;
         top: -30px;
+    }
+
+    
+    .arrows {
+        background-color: $white;
+        transform: rotate(180deg);
+        overflow: hidden;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        max-width: 100%;
+        line-height: 0;
+        direction: ltr;
+
+        svg {
+            width: auto;
+            height: 8px;
+            @media (min-width: 1024px) { height: 12px; }
+        }
     }
 
 }

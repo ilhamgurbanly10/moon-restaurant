@@ -11,6 +11,12 @@
     padding-right: 0;
 }
 
+.main-container-3 {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+}
+
 @media (min-width: 640px) {
 
     .main-container {
@@ -34,6 +40,14 @@
         max-width: $mainContainer;
         margin-left: auto;
         margin-right: auto;
+    }
+
+    .main-container-3 {
+        max-width: $mainContainer;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 150px;
+        padding-right: 150px;
     }
 
 }

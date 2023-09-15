@@ -4,6 +4,10 @@ import IsLoading from '@/components/loaders/IsLoading.vue';
 
 import { defineAsyncComponent } from 'vue';
 
+const HeroSection = defineAsyncComponent(() =>
+  import('@/components/sections/HeroSection.vue')
+);
+
 const AboutUs = defineAsyncComponent(() =>
   import('@/components/sections/AboutUs.vue')
 );
@@ -19,6 +23,18 @@ const VisitOurRestaurant = defineAsyncComponent(() =>
 </script>
 
 <template>
+
+  <Suspense>
+
+    <template #default>
+      <HeroSection />
+    </template>
+
+    <template #fallback>
+      <IsLoading />
+    </template>
+
+  </Suspense>
 
   <Suspense>
 
